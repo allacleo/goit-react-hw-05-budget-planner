@@ -1,14 +1,22 @@
 import React, { Component } from 'react';
-import Form from './shared/Form';
-import Label from './shared/Label';
-import Input from './shared/Input';
-import Button from './shared/Button';
+import { connect } from 'react-redux';
+import T from 'prop-types';
+import Form from '../components/shared/Form';
+import Label from '../components/shared/Label';
+import Input from '../components/shared/Input';
+import Button from '../components/shared/Button';
+
+import { saveBudget } from '../redux/planner/plannerActions';
 
 const labelStyles = `
   margin-bottom: 16px;  
 `;
 
-export default class BudgetForm extends Component {
+class BudgetForm extends Component {
+  static propTypes = {
+    onSave: T.func.isRequired,
+  };
+  
   state = {
     budget: 0,
   };
@@ -43,3 +51,9 @@ export default class BudgetForm extends Component {
     );
   }
 }
+
+const mapDispatchToProps = dispatch => ({
+  onSave: value => dispatch(saveBudget(value)),
+});
+
+export default connect(null, mapDispatchToProps)(BudgetForm);

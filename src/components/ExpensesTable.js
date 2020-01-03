@@ -1,6 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import Button from './shared/Button';
+import { connect } from 'react-redux';
+import Button from '../components/shared/Button';
+import T from 'prop-types';
+import selectors from '../redux/planner/plannerSelectors';
+import {removeExpense} from '../redux/planner/plannerActions';
 
 const Table = styled.table`
   border-collapse: collapse;
@@ -41,4 +45,27 @@ const ExpensesTable = ({ items = [], onRemove }) => (
   </Table>
 );
 
-export default ExpensesTable;
+ExpensesTable.propTypes = {
+  items: T.arrayOf(T.shape({
+    id: T.string,
+    name: T.string,
+    amount: T.number,
+  })).isRequired,
+  onRemove: T.func.isRequired,
+};
+
+
+
+const mapStateToProps = state => {
+  return {
+    items: selectors.getAllExpenses(state),
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    onRemove: id => dispatch(removeExpense(id)),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ExpensesTable);

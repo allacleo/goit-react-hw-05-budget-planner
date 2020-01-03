@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import T from 'prop-types';
 
 const Container = styled.div`
   text-align: center;
@@ -28,5 +29,15 @@ const Value = ({ label, value, isPositive }) => (
     <Amount>{value}&nbsp;&#x24;</Amount>
   </Container>
 );
+
+Value.defaultProps = {
+  isPositive: false,
+};
+
+Value.propTypes = {
+  label: T.string.isRequired,
+  value: T.number.isRequired,
+  isPositive: T.bool,
+};
 
 export default Value;

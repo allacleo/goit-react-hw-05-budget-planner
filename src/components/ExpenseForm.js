@@ -1,14 +1,22 @@
 import React, { Component } from 'react';
-import Form from './shared/Form';
-import Label from './shared/Label';
-import Input from './shared/Input';
-import Button from './shared/Button';
+import T from 'prop-types';
+import { connect } from 'react-redux';
+import Form from '../components/shared/Form';
+import Label from '../components/shared/Label';
+import Input from '../components/shared/Input';
+import Button from '../components/shared/Button';
+
+import { addExpense } from '../redux/planner/plannerActions';
 
 const labelStyles = `
   margin-bottom: 16px;  
 `;
 
-export default class ExpenseForm extends Component {
+ class ExpenseForm extends Component {
+  static propTypes = {
+    onSave: T.func.isRequired,
+  };
+
   state = {
     name: '',
     amount: 0,
@@ -54,3 +62,9 @@ export default class ExpenseForm extends Component {
     );
   }
 }
+
+const mapDispatchToProps = dispatch => ({
+  onSave: expense => dispatch(addExpense(expense)),
+});
+
+export default connect(null, mapDispatchToProps)(ExpenseForm);

@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import T from 'prop-types';
 
 const StyledInput = styled.input`
   color: #171718;
@@ -22,5 +23,18 @@ const Input = ({
   onChange = () => null,
   name = ""
 }) => <StyledInput type={type} value={value} onChange={onChange} name={name} />;
+
+Input.defaultProps = {
+  name: '',
+};
+
+Input.propTypes = {
+  type: T.string.isRequired,
+  value: T.oneOfType([T.string, T.number]).isRequired,
+  onChange: T.func.isRequired,
+  name: T.string,
+};
+
+
 
 export default Input;

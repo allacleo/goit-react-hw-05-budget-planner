@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import T from 'prop-types';
 
 const StyledButton = styled.button`
   display: inline-flex;
@@ -30,5 +31,18 @@ const Button = ({ type = "button", label = "", onClick = () => null }) => (
     {label}
   </StyledButton>
 );
+
+Button.defaultProps = {
+  type: 'button',
+  label: '',
+  onClick: () => null,
+};
+
+Button.propTypes = {
+  type: T.string,
+  label: T.string,
+  onClick: T.func,
+};
+
 
 export default Button;
