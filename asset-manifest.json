@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/goit-react-hw-05-budget-planner/static/js/main.872dcad8.chunk.js",
-    "main.js.map": "/goit-react-hw-05-budget-planner/static/js/main.872dcad8.chunk.js.map",
+    "main.js": "/goit-react-hw-05-budget-planner/static/js/main.c42ca4ea.chunk.js",
+    "main.js.map": "/goit-react-hw-05-budget-planner/static/js/main.c42ca4ea.chunk.js.map",
     "runtime-main.js": "/goit-react-hw-05-budget-planner/static/js/runtime-main.791807b6.js",
     "runtime-main.js.map": "/goit-react-hw-05-budget-planner/static/js/runtime-main.791807b6.js.map",
     "static/js/2.eeeca242.chunk.js": "/goit-react-hw-05-budget-planner/static/js/2.eeeca242.chunk.js",
     "static/js/2.eeeca242.chunk.js.map": "/goit-react-hw-05-budget-planner/static/js/2.eeeca242.chunk.js.map",
     "index.html": "/goit-react-hw-05-budget-planner/index.html",
-    "precache-manifest.e8502d76aaff8a7c84c2bbf1f014f312.js": "/goit-react-hw-05-budget-planner/precache-manifest.e8502d76aaff8a7c84c2bbf1f014f312.js",
+    "precache-manifest.ec81a7d1a8ab4760a9562f64be0013c0.js": "/goit-react-hw-05-budget-planner/precache-manifest.ec81a7d1a8ab4760a9562f64be0013c0.js",
     "service-worker.js": "/goit-react-hw-05-budget-planner/service-worker.js",
     "static/js/2.eeeca242.chunk.js.LICENSE": "/goit-react-hw-05-budget-planner/static/js/2.eeeca242.chunk.js.LICENSE"
   },
   "entrypoints": [
     "static/js/runtime-main.791807b6.js",
     "static/js/2.eeeca242.chunk.js",
-    "static/js/main.872dcad8.chunk.js"
+    "static/js/main.c42ca4ea.chunk.js"
   ]
 }
